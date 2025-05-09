@@ -3,10 +3,12 @@ class Solution:
         if  len(nums)<2:
             return 0
         nums.sort()
-        res=[]
-        for i in range(len(nums)-1):
-            res.append(nums[i+1]-nums[i])
-        return max(res)
+        res=0
+        for i in range(1,len(nums)):
+            gap = nums[i] - nums[i - 1]
+        # Update max_gap if the current gap is larger
+            res = max(res, gap)
+        return res
             
         
 
